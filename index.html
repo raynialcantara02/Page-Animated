@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Estilos con Animaciones</title>
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #e0f7fa; /* Fondo claro con un toque de color */
+            text-align: justify;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00796b; /* Color de fondo del encabezado */
+            color: #fff; /* Color del texto en el encabezado */
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4db6ac; /* Color de los enlaces en la navegación */
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+            transform: scale(1.1); /* Efecto de aumento en el hover */
+        }
+
+        main {
+            background-color: #ffffff; /* Fondo blanco para el contenido principal */
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #004d40; /* Color de los encabezados */
+        }
+
+        h1 {
+            animation: slideIn 1s ease-out;
+        }
+
+        h2 {
+            animation: slideIn 1s ease-out;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #004d40;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #00796b;
+            color: #fff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f1f8e9;
+        }
+
+        tbody tr:hover {
+            background-color: #c8e6c9; /* Color de fondo al pasar el ratón sobre las filas */
+        }
+
+        footer {
+            background-color: #00796b;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            animation: fadeIn 2s ease-in;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Estilos de formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="text"], input[type="email"] {
+            padding: 10px;
+            border: 1px solid #00796b;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #004d40;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00796b;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a mi Página Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#seccion1">Sección 1</a></li>
+                <li><a href="#seccion2">Sección 2</a></li>
+                <li><a href="#seccion3">Sección 3</a></li>
+                <li><a href="#formulario">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="seccion1">
+            <h2>Sección 1</h2>
+            <p>Este es un párrafo en la primera sección. Aquí se puede incluir <a href="#">un enlace</a> para más información.</p>
+            <img src="https://via.placeholder.com/150" alt="Imagen de ejemplo">
+        </section>
+        <section id="seccion2">
+            <h2>Sección 2</h2>
+            <ul>
+                <li>Elemento de lista 1</li>
+                <li>Elemento de lista 2</li>
+                <li>Elemento de lista 3</li>
+            </ul>
+        </section>
+        <section id="seccion3">
+            <h2>Sección 3</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Columna 1</th>
+                        <th>Columna 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fila 1, Columna 1</td>
+                        <td>Fila 1, Columna 2</td>
+                    </tr>
+                    <tr>
+                        <td>Fila 2, Columna 1</td>
+                        <td>Fila 2, Columna 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="formulario">
+            <h2>Formulario</h2>
+            <form action="#">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+</body>
+</html>
